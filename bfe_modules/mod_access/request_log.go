@@ -215,7 +215,7 @@ func onLogFmtLogId(m *ModuleAccess, logItem *LogFmtItem, buff *bytes.Buffer,
 		return errors.New("req is nil")
 	}
 
-	msg := req.LogId
+	msg := req.LogId + " " + req.Session.SessionId
 	buff.WriteString(msg)
 
 	return nil

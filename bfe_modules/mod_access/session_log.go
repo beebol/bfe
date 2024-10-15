@@ -31,7 +31,7 @@ func onLogFmtSesClientIp(m *ModuleAccess, logItem *LogFmtItem, buff *bytes.Buffe
 		return errors.New("session is nil")
 	}
 
-	buff.WriteString(session.RemoteAddr.String())
+	buff.WriteString(session.RemoteAddr.String() + " " + session.SessionId)
 
 	return nil
 }
